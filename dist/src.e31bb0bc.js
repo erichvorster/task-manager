@@ -8413,22 +8413,34 @@ function newTodo() {
 
     var todo = document.createElement("li");
     todo.classList.add("todo");
-    todo.innerHTML = "<textarea id=\"text-area\">".concat(inputText.value, "</textarea>");
+    todo.innerHTML = "<textarea disabled class=\"text-area todo-text-area py-4\" >".concat(inputText.value, "</textarea>");
     todoItem.prepend(todo);
     inputText.value = ""; //Due date
 
     if (date.value) {
       var dueDate = document.createElement("div");
-      dueDate.innerHTML = "Due date: ".concat(date.value);
+      dueDate.innerHTML = "<i class=\"bi bi-calendar-week-fill icon-calender\"></i>";
+      dueDate.classList.add("due-date-container");
+      dueDate.innerHTML = "<textArea disabled type=\"number\" class=\"text-area due-date-text-area\">  ".concat(date.value, " </textArea>");
       todoItem.append(dueDate);
-    }
+    } //Add edit button
 
-    date.value = ""; //Add edit button
 
     var editButton = document.createElement("button");
     editButton.innerHTML = "<i class=\"bi bi-pencil-square\"></i>";
     editButton.classList.add("edit-button");
-    todoItem.append(editButton); //Add complete button
+    todoItem.append(editButton); //Clear date selector after todo submittion
+
+    date.value = ""; //Implementing edit for the edit button
+
+    var dueDateTextArea = document.querySelector(".due-date-text-area");
+    editButton.addEventListener("click", function () {
+      dueDateTextArea.toggleAttribute("disabled");
+    });
+    var todoTextArea = document.querySelector(".todo-text-area");
+    editButton.addEventListener("click", function () {
+      todoTextArea.toggleAttribute("disabled");
+    }); //Add complete button
 
     var completeButton = document.createElement("button");
     completeButton.innerHTML = '<i class="bi bi-check-circle"></i>';
@@ -8437,13 +8449,34 @@ function newTodo() {
 
     radioOption.forEach(function (opt) {
       if (opt.checked && opt.value === "high") {
-        todoList.firstChild.style.borderColor = "red";
+        todoList.firstChild.style.backgroundColor = "#f53240";
       } else if (opt.checked && opt.value === "medium") {
-        todoList.firstChild.style.borderColor = "yellow";
+        todoList.firstChild.style.backgroundColor = "#F9BE02";
       } else if (opt.checked && opt.value === "low") {
-        todoList.firstChild.style.borderColor = "green";
+        todoList.firstChild.style.backgroundColor = "#02C8A7";
       }
-    });
+    }); //Implementing task counter
+
+    var taskCounter = document.querySelector(".task-counter");
+    var tasks = document.querySelectorAll(".todo-item");
+    var totalTasks = [];
+
+    function totalTasks1() {
+      for (var i = 0; i <= tasks.length - 1; i++) {
+        totalTasks.push(tasks[i]);
+      }
+    }
+
+    totalTasks1();
+    taskCounter.innerText = "".concat(totalTasks.length); //Implementing task counter color changes
+
+    if (totalTasks.length <= 5) {
+      taskCounter.style.color = "green";
+    } else if (totalTasks.length <= 10) {
+      taskCounter.style.color = "orange";
+    } else {
+      taskCounter.style.color = "red";
+    }
   });
 }
 
@@ -8458,10 +8491,6 @@ todoList.addEventListener("click", function (e) {
       todo.remove();
     });
   }
-}); //Implementing edit
-
-todoList.addEventListener("click", function (e) {
-  var selected = e.target;
 });
 },{"bootstrap":"../node_modules/bootstrap/dist/js/bootstrap.esm.js"}],"../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -8491,7 +8520,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64506" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63284" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

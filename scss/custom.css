@@ -12455,13 +12455,57 @@ fieldset:disabled .btn {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tasks-card {
+  border: 2px solid lightgrey;
+  border-radius: 20px;
+  min-height: 100vh;
+  min-width: 414px;
+  position: relative;
+}
+
+.task-counter {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  background-color: white;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.7rem;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .todo-item {
-  border: 3px solid lightgrey;
   border-radius: 10px;
   list-style: none;
   margin: 10px;
+  position: relative;
+}
+
+.todo-text-area {
+  padding: 10px;
+  color: black;
 }
 
 .todo {
@@ -12471,35 +12515,216 @@ fieldset:disabled .btn {
 .complete-button {
   float: right;
   border: none;
-  padding: 10px;
   background: none;
-  color: green;
+  color: White;
+  position: absolute;
+  top: 5px;
+  right: 40px;
 }
 
 .edit-button {
   float: right;
   border: none;
-  padding: 10px;
   background: none;
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.calender-icon {
+  color: white;
 }
 
 .radio-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .text-area {
-  border: none;
   width: 100%;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  resize: none;
 }
 
-.text-area:active {
+.text-area:focus {
+  width: 100%;
   border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  resize: none;
+}
+
+.radio-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 0 auto;
 }
 
 .hidden {
   display: none;
+}
+
+.input-text {
+  height: 5rem;
+  border-radius: 20px;
+}
+
+.form-check-label {
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+.date {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  color: #95a5a6;
+  font-family: "Helvetica", arial, sans-serif;
+  font-size: 18px;
+  border: 1px solid #ecf0f1;
+  border-radius: 20px;
+  padding: 5px;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+.due-date-container {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  color: white;
+}
+
+.due-date-text-area {
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.todo-button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.todo-button {
+  border: none;
+  background-color: black;
+  border-radius: 50px;
+  height: 3rem;
+  width: 16rem;
+  position: fixed;
+  bottom: 20px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.todo-button-icon {
+  font-size: 15px;
+}
+
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+}
+
+.form-control + .form-control {
+  margin-top: 1em;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  -webkit-transform: translateY(-0.075em);
+          transform: translateY(-0.075em);
+}
+
+input[type="radio"] {
+  /* ...existing styles */
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 120ms -webkit-transform ease-in-out;
+  transition: 120ms -webkit-transform ease-in-out;
+  transition: 120ms transform ease-in-out;
+  transition: 120ms transform ease-in-out, 120ms -webkit-transform ease-in-out;
+  -webkit-box-shadow: inset 1em 1em var(--form-control-color);
+          box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 120ms -webkit-transform ease-in-out;
+  transition: 120ms -webkit-transform ease-in-out;
+  transition: 120ms transform ease-in-out;
+  transition: 120ms transform ease-in-out, 120ms -webkit-transform ease-in-out;
+  -webkit-box-shadow: inset 1em 1em var(--form-control-color);
+          box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+input[type="radio"]:checked::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 /*# sourceMappingURL=custom.css.map */

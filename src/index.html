@@ -5,32 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.2/font/bootstrap-icons.min.css" integrity="sha512-YzwGgFdO1NQw1CZkPoGyRkEnUTxPSbGWXvGiXrWk8IeSqdyci0dEDYdLLjMxq1zCoU0QBa4kHAFiRhUL3z2bow==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../scss/custom.css">
     <title>Productivity Widget</title>
 </head>
 <body>
     <div class="container">
-        <div class="card text-center m-5">
-            <h1>Team Tasks</h1>
+        <div class="tasks-card text-center text-light bg-dark p-1 my-5">
+            <p class="lead py-2">Task Manager</p>
+            <div class="task-counter">
+            
+            </div>
+            <div class="task-greeting text-start p-3">
+                <h6>Welcome back</h6>
+                <h5>Your current tasks</h5>
+            </div>
             <!--Input-->
-            <div class="input-group mb-3 p-2">
+            <div class="input-group mb-3 px-3 py-2">
                 <input type="text" class="input-text form-control" placeholder="Todo" aria-label="Todo" aria-describedby="button-addon2">
             </div>
-            <h3>Priority</h3>
-            <div class="radio-container">
-                <div class="form-check m-2">
+            <p class="lead px-3">Priority</p>
+            <div class="radio-container pt-2 pb-3">
+                <div class="form-check ">
                     <input class="form-check-input" id="high" value="high" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                     <label class="form-check-label" for="flexRadioDefault1">
                       High
                     </label>
                 </div>
-                <div class="form-check m-2">
+                <div class="form-check ">
                     <input class="form-check-input" id="medium" value="medium" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                     <label class="form-check-label" for="flexRadioDefault1">
                       Medium
                     </label>
                 </div>
-                <div class="form-check m-2">
+                <div class="form-check ">
                     <input class="form-check-input" id="low" value="low" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                     <label class="form-check-label" for="flexRadioDefault1">
                       Low
@@ -38,18 +48,19 @@
                 </div>
             </div>
             <div class="due-date">
-                <h3>Due date</h3>
-                 <input class="date" type="date" >
+                <p class="lead ">Due date</p>
+                 <input class="date px-3" type="date" >
             </div>
-            <button type="button" class=" todo-button btn btn-secondary">Secondary</button>
+            <div class="todo-button-container">
+                <button class="todo-button" role="button"><i class="bi bi-plus-square-fill todo-button-icon px-2"></i>Create task</button>
+            </div>
             
-
             <div class="todo-container my-5">
-                <ul class="todo-list list-group mx-5">
-                    
-            
-                    
+                <ul class="todo-list list-group mx-2">
                 </ul>
+            </div>
+            <div class="blurry-div">
+                
             </div>
         </div>
     </div>
