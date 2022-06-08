@@ -8405,7 +8405,7 @@ var date = document.querySelector(".date");
 
 function newTodo() {
   todoBtn.addEventListener("click", function (e) {
-    e.preventDefault; //Creat new todo container
+    e.preventDefault; //Create new todo container
 
     var todoItem = document.createElement("div");
     todoItem.classList.add("todo-item");
@@ -8414,7 +8414,8 @@ function newTodo() {
     var todo = document.createElement("li");
     todo.classList.add("todo");
     todo.innerHTML = "<textarea disabled class=\"text-area todo-text-area py-4\" >".concat(inputText.value, "</textarea>");
-    todoItem.prepend(todo);
+    todoItem.prepend(todo); //Clearing input after tod is added
+
     inputText.value = ""; //Due date
 
     if (date.value) {
@@ -8423,15 +8424,15 @@ function newTodo() {
       dueDate.classList.add("due-date-container");
       dueDate.innerHTML = "<textArea disabled type=\"number\" class=\"text-area due-date-text-area\">  ".concat(date.value, " </textArea>");
       todoItem.append(dueDate);
-    } //Add edit button
+    } //Clear date selector after todo submittion
 
+
+    date.value = ""; //Add edit button
 
     var editButton = document.createElement("button");
     editButton.innerHTML = "<i class=\"bi bi-pencil-square\"></i>";
     editButton.classList.add("edit-button");
-    todoItem.append(editButton); //Clear date selector after todo submittion
-
-    date.value = ""; //Implementing edit for the edit button
+    todoItem.append(editButton); //Implementing edit for the edit button
 
     var dueDateTextArea = document.querySelector(".due-date-text-area");
     editButton.addEventListener("click", function () {
@@ -8491,7 +8492,16 @@ todoList.addEventListener("click", function (e) {
       todo.remove();
     });
   }
-});
+}); //Implementing todo filter
+
+function todoFilter() {
+  var buttons = document.querySelectorAll(".tab-button");
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      if (btn.hasAttribute("data-tab=1")) {}
+    });
+  });
+}
 },{"bootstrap":"../node_modules/bootstrap/dist/js/bootstrap.esm.js"}],"../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -8520,7 +8530,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63284" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64205" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

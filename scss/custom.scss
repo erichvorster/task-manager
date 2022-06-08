@@ -19,6 +19,16 @@
     min-height: 100vh;
     min-width: 414px;
     position: relative;
+    text-align: center;
+    color:white;
+    background-color: black;
+    padding:10px;
+    margin: 50px 0px;
+    
+}
+
+.task-header{
+    padding: 30px 0;
 }
 
 .task-counter{
@@ -36,11 +46,17 @@
     align-items: center;
 }
 
+.task-greeting{
+    text-align: start;
+    padding:20px;
+}
+
 .todo-item{
     border-radius: 10px;
     list-style: none;
     margin:10px;
     position: relative;
+    z-index:1;
 }
 
 .todo-text-area{
@@ -50,6 +66,8 @@
 
 .todo{
     display: inline;
+    color:white;
+    height:3rem;
 }
 
 
@@ -57,7 +75,7 @@
     float: right;
     border:none;
     background: none;
-    color:White;
+    color:green;
     position: absolute;
     top:5px;
     right:40px;
@@ -66,7 +84,7 @@
     float:right;
     border:none;
     background:none;
-    color:white;
+    color:black;
     position: absolute;
     top:5px;
     right:10px;
@@ -76,9 +94,9 @@
     color:white;
 }
 
-.radio-container{
-    display: flex;
-    justify-content: center;
+.text-area-container{
+    margin-bottom:30px;
+    padding:30px 20px;
 }
 
 .text-area{
@@ -88,28 +106,41 @@
     resize: none;
     outline: none;
     resize:none;
+    height:80px;
+    
+    border-radius:20px;
 }
+
+
 .text-area:focus{
     width:100%;
     border: none;
-    background-color: transparent;
+    background-color: white;
     resize: none;
     outline: none;
     resize:none;
+}
+
+.radio-header{
+    padding:30px 0px;
 }
 
 .radio-container{
     display: flex;
     width:400px;
     justify-content: space-evenly;
-    margin:0 auto
+    margin:0 auto;
+    padding:30px 0px;
 }
+
+.radio-button{
+    
+}
+
 
 .hidden{
     display: none;
 }
-
-
 
 .input-text{
     height:5rem;
@@ -132,7 +163,7 @@
     padding:5px;
     display: inline-block !important;
     visibility: visible !important;
-    
+    padding:30px 0px;
 }
 
  .due-date-container{
@@ -149,6 +180,7 @@
      overflow:hidden;
  }
 
+
 .todo-button-container{
     display: flex;
     justify-content: center;
@@ -164,79 +196,33 @@
     bottom:20px;
     color:white;
     font-size: 1.5rem;
+    z-index: 2;
 }
 
 .todo-button-icon{
     font-size: 15px;
 }
 
-input[type="radio"] {
-    /* Add if not using autoprefixer */
-    -webkit-appearance: none;
-    appearance: none;
-    /* For iOS < 15 to remove gradient background */
-    background-color: #fff;
-    /* Not removed via appearance */
-    margin: 0;
-  }
-
-  input[type="radio"] {
-    appearance: none;
-    background-color: #fff;
-    margin: 0;
-    font: inherit;
-    color: currentColor;
-    width: 1.15em;
-    height: 1.15em;
-    border: 0.15em solid currentColor;
-    border-radius: 50%;
-  }
-  
-  .form-control + .form-control {
-    margin-top: 1em;
-  }
-
-  input[type="radio"] {
-    appearance: none;
-    background-color: #fff;
-    margin: 0;
-    font: inherit;
-    color: currentColor;
-    width: 1.15em;
-    height: 1.15em;
-    border: 0.15em solid currentColor;
-    border-radius: 50%;
-    transform: translateY(-0.075em);
-  }
+.tab-button-component{
+    display: flex;
+}
 
 
-  input[type="radio"] {
-    /* ...existing styles */
-  
-    display: grid;
-    place-content: center;
-  }
+.tab-button{
+    background-color: black;
+    color:white;
+    border: none;
+    border-radius:50px;
+    padding:5px;
+    font-size:14px;
+    margin:20px 10px;
+    width:100px;
+}
 
-  input[type="radio"]::before {
-    content: "";
-    width: 0.65em;
-    height: 0.65em;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
-  }
+.todo-container{
+    margin: 50px 0px;
+}
 
-  input[type="radio"]::before {
-    content: "";
-    width: 0.65em;
-    height: 0.65em;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
-  }
-  
-  input[type="radio"]:checked::before {
-    transform: scale(1);
-  }
+.todo-list{
+    margin:20px 0px;
+}
